@@ -61,7 +61,7 @@ const AddTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
               Cancel
             </button>
             <button
-              className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded"
+              className="bg-amber-700 text-white hover:bg-blue-700 px-4 py-2 rounded hover:bg-amber-600"
               onClick={handleAddTask}
             >
               Add

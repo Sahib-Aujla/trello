@@ -12,27 +12,19 @@ const Board = () => {
   const { tasks, setTasks } = useTaskContext();
 
   const onDragEnd = (result: DropResult) => {
-    console.log("here")
     const { source, destination } = result;
-    console.log("Drag result:", result);
+
     if (!destination) return;
 
     const sourceCol = source.droppableId as ColumnType;
     const destCol = destination.droppableId as ColumnType;
-    
-    const draggedTask = tasks[sourceCol][source.index];
-    const isDuplicate = tasks[destCol].some(
-      (task) =>
-        task.title.toLowerCase() === draggedTask.title.toLowerCase() &&
-        task.id !== draggedTask.id
-    );
 
-    if (isDuplicate) {
-      // Optionally show an error message
-      console.log(
-        "Cannot move task: A task with this title already exists in the destination column"
-      );
-      return;
+    const draggedTask = tasks[sourceCol][source.index];
+
+    for (let i = 0; i < tasks[destCol].length; i++) {
+      if (tasks[destCol][i].id === draggedTask.id) {
+        return;
+      }
     }
 
     const newSourceTasks = Array.from(tasks[sourceCol]);
@@ -53,7 +45,7 @@ const Board = () => {
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-bold">Task Board</h1>
         <button
-          className="bg-blue-600 text-white px-4 py-2 rounded"
+          className="bg-amber-700 text-white px-4 py-2 rounded hover:bg-amber-600 "
           onClick={() => setIsModalOpen(true)}
         >
           + Add Task

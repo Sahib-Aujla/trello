@@ -9,8 +9,6 @@ interface Props {
 }
 
 const Column: React.FC<Props> = ({ column, tasks = [] }) => {
-  console.log(column);
-  console.log(tasks);
   return (
     <div className="bg-white rounded-lg shadow p-3 min-h-[400px]">
       <h2 className="text-lg font-semibold mb-2">{column}</h2>
