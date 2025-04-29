@@ -24,7 +24,7 @@ const TaskCard: React.FC<Props> = ({ task, index, column }) => {
     <Draggable draggableId={task.id} index={index}>
       {(provided) => (
         <div
-          className="bg-gray-100 p-3 rounded shadow flex justify-between items-start"
+          className="bg-gray-200 p-3 rounded shadow flex justify-between items-start"
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}

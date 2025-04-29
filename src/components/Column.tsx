@@ -10,7 +10,7 @@ interface Props {
 
 const Column: React.FC<Props> = ({ column, tasks = [] }) => {
   return (
-    <div className="bg-white rounded-lg shadow p-3 min-h-[400px]">
+    <div className="bg-slate-300 rounded-lg shadow p-3 min-h-[400px]">
       <h2 className="text-lg font-semibold mb-2">{column}</h2>
       <div>
         <Droppable  droppableId={column} isDropDisabled={false}>
@@ -19,7 +19,7 @@ const Column: React.FC<Props> = ({ column, tasks = [] }) => {
               ref={provided.innerRef}
               {...provided.droppableProps}
               className={`space-y-2 min-h-[350px] ${
-                snapshot.isDraggingOver ? "bg-gray-50" : ""
+                snapshot.isDraggingOver ? "bg-slate-200" : ""
               }`}
             >
               {tasks.map((task, index) => (
