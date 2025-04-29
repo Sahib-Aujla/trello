@@ -2,12 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
-import { RecoilRoot } from 'recoil'
+import { TaskProvider } from "./state/TaskContext";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-     <RecoilRoot>
+     <TaskProvider>
       <App />
-    </RecoilRoot>
+    </TaskProvider>
   </StrictMode>,
 )
