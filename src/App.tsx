@@ -1,10 +1,12 @@
 import "./App.css";
+import Board from "./components/Board";
 
 function App() {
   return (
-    <div className="h-screen flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
-      <h1 className="text-4xl font-bold">Tailwind is working!</h1>
-    </div>
+    <div className="min-h-screen bg-gray-100 p-4">
+    <h1 className="text-2xl font-bold text-center mb-4">📝 Trello Task Board</h1>
+    <Board />
+  </div>
   );
 }
 
