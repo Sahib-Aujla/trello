@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { useTaskContext } from "../state/TaskContext";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 interface Props {
   isOpen: boolean;
   onClose: () => void;
 }
 
 const AddTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
-  const { tasks, setTasks } = useTaskContext();
+  const { setTasks } = useTaskContext();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -36,7 +36,9 @@ const AddTaskModal: React.FC<Props> = ({ isOpen, onClose }) => {
       <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
       <div className="fixed inset-0 flex items-center justify-center p-4">
         <Dialog.Panel className="mx-auto max-w-sm rounded-xl bg-white p-6 shadow-lg">
-          <Dialog.Title className="text-lg font-bold mb-4">Add New Task</Dialog.Title>
+          <Dialog.Title className="text-lg font-bold mb-4">
+            Add New Task
+          </Dialog.Title>
 
           <input
             type="text"
